@@ -461,30 +461,26 @@
           const lbl = el('text', { x: x + 5, y: y - 5 }); lbl.textContent = name; labels.appendChild(lbl);
         });
         svg.appendChild(labels);
+        var truckClass = isMobile ? 'route-truck-mobile' : 'route-truck';
+        var truck = el('g', { class: truckClass, 'aria-hidden': 'true' });
         if (isMobile) {
-          const truck = el('g', { class: 'route-truck-mobile', 'aria-hidden': 'true' });
           truck.appendChild(el('rect', { x: -8, y: -5, width: 12, height: 8, rx: 1.5 }));
           truck.appendChild(el('path', { d: 'M4,-5h5l3,3v5H4z' }));
           truck.appendChild(el('circle', { cx: -4, cy: 4, r: 2 }));
           truck.appendChild(el('circle', { cx: 6, cy: 4, r: 2 }));
-          const anim = el('animateMotion', { dur: '24s', repeatCount: 'indefinite', rotate: 'auto' });
-          anim.appendChild(el('mpath', { href: '#coverage-route', 'xlink:href': '#coverage-route' }));
-          truck.appendChild(anim);
-          svg.appendChild(truck);
         } else {
-          const truck = el('g', { class: 'route-truck', 'aria-hidden': 'true' });
           truck.appendChild(el('rect', { x: -10, y: -6, width: 14, height: 10, rx: 1.5 }));
           truck.appendChild(el('path', { d: 'M4,-6h6l4,4v6H4z' }));
           truck.appendChild(el('circle', { cx: -5, cy: 5, r: 2.3 }));
           truck.appendChild(el('circle', { cx: 8, cy: 5, r: 2.3 }));
-          svg.appendChild(truck);
         }
+        svg.appendChild(truck);
         map.replaceChildren(svg);
-        if (!isMobile) startTruck(svg);
+        startTruck(svg);
       }
 
       function startTruck(svg) {
-        const truck = svg.querySelector('.route-truck');
+        const truck = svg.querySelector('.route-truck') || svg.querySelector('.route-truck-mobile');
         const routeEl = svg.querySelector('#coverage-route');
         const routeLen = routeEl.getTotalLength();
         const duration = 18000;
