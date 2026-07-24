@@ -1220,8 +1220,6 @@ footer li a:hover{color:var(--amber);}
   border-radius:20px;
 }
 .map-teaser-cta{
-  position:absolute;right:20px;bottom:20px;
-  z-index:7;
   display:flex;align-items:center;gap:8px;
   background:var(--navy);
   border:1px solid var(--navy);
@@ -1230,9 +1228,28 @@ footer li a:hover{color:var(--amber);}
   font-family:var(--heading);font-weight:700;font-size:13px;color:var(--white);
   box-shadow:0 8px 20px rgba(20,33,61,.22);
   transition:background .2s ease,border-color .2s ease,transform .2s ease;
+  white-space:nowrap;
 }
 .map-teaser:hover .map-teaser-cta{background:var(--red);border-color:var(--red);transform:translateY(-2px);}
 .map-teaser:hover .map-teaser-pin{transform:rotate(-45deg) scale(1.15);}
+.map-teaser-actions{
+  position:absolute;right:20px;bottom:20px;z-index:7;
+  display:flex;align-items:center;gap:10px;
+}
+.map-teaser-share{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--concrete-dim);
+  padding:10px 14px;
+  border-radius:4px;
+  font-family:var(--heading);font-weight:700;font-size:13px;color:var(--navy);
+  box-shadow:0 8px 20px rgba(20,33,61,.12);
+  cursor:pointer;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease,color .2s ease;
+}
+.map-teaser-share svg{flex-shrink:0;}
+.map-teaser:hover .map-teaser-share{background:var(--white);border-color:var(--red);color:var(--red);transform:translateY(-2px);}
+.map-teaser-share.copied{background:var(--red);color:var(--white);border-color:var(--red);}
 .map-teaser:focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
 @media (prefers-reduced-motion:reduce){
   .map-teaser-scan{animation:none;}
@@ -1240,7 +1257,9 @@ footer li a:hover{color:var(--amber);}
 }
 @media (max-width:600px){
   .map-teaser{height:300px;}
-  .map-teaser-cta{left:20px;right:20px;justify-content:center;}
+  .map-teaser-actions{left:16px;right:16px;bottom:16px;flex-direction:column;align-items:stretch;}
+  .map-teaser-actions .map-teaser-cta,.map-teaser-actions .map-teaser-share{width:100%;justify-content:center;}
+  .map-teaser-label{font-size:9px;padding:3px 8px;}
 }
 
 /* ============================= */

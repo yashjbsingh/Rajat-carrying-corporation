@@ -136,12 +136,23 @@
           <span class="map-teaser-pin"></span>
         </div>
         <div class="map-teaser-label" aria-hidden="true">GIDC Vapi &middot; 20.3625&deg; N, 72.9291&deg; E</div>
-        <div class="map-teaser-cta">
-          <span>Open in Google Maps</span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 17 17 7M9 7h8v8" />
-          </svg>
+        <div class="map-teaser-actions">
+          <button type="button" class="map-teaser-share" id="map-share-btn"
+            aria-label="Share this location">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            <span>Share Location</span>
+          </button>
+          <div class="map-teaser-cta">
+            <span>Open in Google Maps</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7M9 7h8v8" />
+            </svg>
+          </div>
         </div>
       </a>
     </div>
@@ -272,6 +283,27 @@
 
       // Keep the tile layer sized correctly if the card's dimensions shift (e.g. font/zoom changes)
       window.addEventListener('resize', function () { teaserMap.invalidateSize(); });
+
+      // Share location button
+      var shareBtn = document.getElementById('map-share-btn');
+      var mapsUrl = 'https://www.google.com/maps?q=20.362458,72.929091';
+      var shareText = 'Rajat Carrying Corporation, GIDC Vapi – 396195';
+      if (shareBtn) {
+        shareBtn.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          if (navigator.share) {
+            navigator.share({ title: shareText, text: shareText, url: mapsUrl }).catch(function () {});
+          } else {
+            navigator.clipboard.writeText(mapsUrl).then(function () {
+              shareBtn.classList.add('copied');
+              shareBtn.querySelector('span').textContent = 'Link Copied!';
+              setTimeout(function () { shareBtn.classList.remove('copied'); shareBtn.querySelector('span').textContent = 'Share Location'; }, 2000);
+            }, function () {
+              window.open(mapsUrl, '_blank');
+            });
+          }
+        });
+      }
     })();
   </script>
 </body>
