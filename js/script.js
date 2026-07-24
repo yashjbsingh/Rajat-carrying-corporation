@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
 submitBtn.disabled = true;
       var name = document.getElementById('f-name').value.trim();
       var phone = document.getElementById('f-phone').value.trim();
-      var route = document.getElementById('f-route').value.trim();
+      var pickup = document.getElementById('f-pickup').value.trim();
+      var dest = document.getElementById('f-dest').value.trim();
+      var route = pickup && dest ? pickup + ' to ' + dest : pickup || dest || '';
       var message = document.getElementById('f-message').value.trim();
 
       var text = 'Enquiry from website:%0A' +
