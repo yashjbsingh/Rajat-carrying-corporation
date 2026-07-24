@@ -1396,10 +1396,10 @@ footer li a:hover{color:var(--amber);}
   .hero-orbit{display:none;}
   .hero-route-lines{opacity:.35;}
   .hero-truck-bg{opacity:.1;}
-  .coverage-route{stroke-dasharray:6 5;animation:coverage-flow 20s linear infinite;filter:drop-shadow(0 0 3px rgba(215,38,61,.45));}
-  .map-cities .base-pin{animation:hub-pulse 2.8s ease-out infinite;}
+  .coverage-route{stroke-dasharray:6 5;animation:coverage-flow 20s linear infinite;}
+  .map-cities .base-pin{animation:none;}
   .map-cities text{font-size:5px;}
-  .route-truck-mobile{will-change:transform;backface-visibility:hidden;}
+  .india-route-map{contain:layout style;}
   .route-truck-mobile rect{fill:#f1efea;stroke:#0d1730;stroke-width:1;}
   .route-truck-mobile path{fill:var(--red);stroke:#0d1730;stroke-width:1;}
   .route-truck-mobile circle{fill:#17181c;stroke:var(--amber);stroke-width:.8;}
