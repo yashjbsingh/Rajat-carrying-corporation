@@ -510,7 +510,7 @@
         } else { truckVisible = true; truckRaf = requestAnimationFrame(animateTruck); }
       }
 
-      if (isMobile) { buildMap(null); }
+      if (isMobile) { fetch(dataUrl).then(r => { if (!r.ok) throw 0; return r.json(); }).then(g => buildMap(g)).catch(() => buildMap(null)); }
       else { fetch(dataUrl).then(r => { if (!r.ok) throw 0; return r.json(); }).then(g => buildMap(g)).catch(() => { map.innerHTML = '<span class="map-error">Nationwide map is unavailable right now.</span>'; }); }
     })();
   </script>
