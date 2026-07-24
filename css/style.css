@@ -464,6 +464,23 @@ section{padding:88px 0;}
   box-shadow:0 22px 46px rgba(13,23,48,.14);
 }
 .leader-card:hover::before{transform:translateX(120%);}
+.leader-card-glow{
+  border-color:rgba(215,38,61,.25);
+  box-shadow:0 0 30px rgba(215,38,61,.1),0 22px 46px rgba(13,23,48,.12);
+  animation:raja-glow 3s ease-in-out infinite alternate;
+}
+@keyframes raja-glow{
+  from{box-shadow:0 0 20px rgba(215,38,61,.08),0 22px 46px rgba(13,23,48,.12);}
+  to{box-shadow:0 0 35px rgba(215,38,61,.15),0 22px 46px rgba(13,23,48,.12);}
+}
+.leader-card-glow::before{
+  background:linear-gradient(120deg,transparent 20%,rgba(215,38,61,.08) 50%,transparent 80%);
+}
+.leader-card-glow:hover{
+  border-color:rgba(215,38,61,.5);
+  box-shadow:0 0 40px rgba(215,38,61,.18),0 22px 46px rgba(13,23,48,.16);
+  animation:none;
+}
 
 .leader-avatar-wrap{position:relative; flex-shrink:0;}
 .leader-avatar{
