@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Singh — Developer &amp; Creator</title>
+  <meta name="description"
+    content="Yash Singh — IT student, developer and content creator. Designed and built the Rajat Carrying Corporation website.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/creator.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body class="creator-body">
+
+  <div class="bg-grid"></div>
+  <div class="aurora"></div>
+  <div class="particle-field" id="particleField"></div>
+  <div class="scroll-rail"><div class="scroll-rail-fill" id="scrollFill"></div></div>
+
+  <div class="page-shell">
+
+    <aside class="side-panel">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        rajatcarrying.com
+      </a>
+
+      <div class="side-photo" id="tiltPhoto">
+        <div class="side-photo-inner">
+          <img src="img/yash-photo.jpg" alt="Yash Singh">
+        </div>
+      </div>
+
+      <span class="side-eyebrow">Vapi, Gujarat <span class="cursor">_</span></span>
+      <h1 class="side-name">Yash<em>  Singh</em></h1>
+
+      <div class="role-rotator" aria-hidden="true">
+        <span>Developer</span>
+        <span>Creator</span>
+        <span>Builder</span>
+      </div>
+
+      <div class="side-actions">
+        <a href="https://www.instagram.com/yash_s_rajput?igsh=ajVoMXFkdWJhb3pk" target="_blank" rel="noopener" class="btn btn-fill">Follow on Instagram</a>
+        <a href="https://wa.me/918128622704" target="_blank" rel="noopener" class="btn btn-line">Say hello</a>
+      </div>
+
+      <nav class="side-nav">
+        <a href="#profile">Profile</a>
+        <a href="#work">Work</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#elsewhere">Elsewhere</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="side-footer">Designed &amp; built by Yash Singh</div>
+    </aside>
+
+    <main class="content-panel">
+
+      <section class="content-section reveal" id="profile">
+        <div class="section-label">Profile</div>
+        <div class="about-text">
+          <p>I'm an IT student with a strong interest in technology, coding, and digital content creation. I enjoy building ideas from scratch and turning them into meaningful projects through creativity and consistency.</p>
+          <p>Currently focused on improving my skills, exploring new tools, and growing in both the tech and content space.</p>
+          <p>My goal is to create value, achieve financial success, and build a strong personal brand over time. Always learning, always building.</p>
+        </div>
+      </section>
+
+      <section class="content-section manifesto reveal">
+        <div class="manifesto-mark">&ldquo;</div>
+        <blockquote>This isn't a portfolio. It's <em>proof of work</em>.</blockquote>
+        <p class="manifesto-sub">Every project on this page shipped because I built it — not because someone assigned it.</p>
+      </section>
+
+      <section class="content-section reveal" id="work">
+        <div class="section-label">Work</div>
+        <div class="ledger">
+          <a href="index.html" class="ledger-row is-live">
+            <div>
+              <div class="ledger-name">Rajat Carrying Corporation</div>
+              <div class="ledger-desc">Full business website — design, build &amp; nationwide route map, for a Vapi-based transport contractor.</div>
+            </div>
+            <span class="ledger-tag live">Live</span>
+          </a>
+          <div class="ledger-row is-soon">
+            <div>
+              <div class="ledger-name">Next build</div>
+              <div class="ledger-desc">More projects are in progress — check back soon.</div>
+            </div>
+            <span class="ledger-tag soon">Coming soon</span>
+          </div>
+        </div>
+
+        <div class="rate-project">
+          <div class="rate-project-head">
+            <div class="rate-project-title">Rate this project</div>
+            <div class="rate-project-sub">Checked out the Rajat Carrying site? Tell me what you think.</div>
+          </div>
+          <div class="star-rating" id="starRating" role="radiogroup" aria-label="Rate this project out of 5 stars">
+            <button type="button" class="star" data-value="1" aria-label="1 star">★</button>
+            <button type="button" class="star" data-value="2" aria-label="2 stars">★</button>
+            <button type="button" class="star" data-value="3" aria-label="3 stars">★</button>
+            <button type="button" class="star" data-value="4" aria-label="4 stars">★</button>
+            <button type="button" class="star" data-value="5" aria-label="5 stars">★</button>
+          </div>
+          <div class="rate-comment-block" id="rateCommentBlock" hidden>
+            <input type="text" id="rateName" class="rate-comment-input rate-name-input" placeholder="Your name (optional)">
+            <textarea id="rateComment" class="rate-comment-input" rows="3" placeholder="Help us with your opinion (optional)"></textarea>
+            <button type="button" id="sendRatingBtn" class="btn btn-fill rate-send-btn">Send rating</button>
+          </div>
+          <p class="rate-project-result" id="rateResult" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="content-section reveal" id="toolkit">
+        <div class="section-label">Toolkit</div>
+        <div class="toolkit-list">
+          <span class="toolkit-tag">HTML &amp; CSS</span>
+          <span class="toolkit-tag">JavaScript</span>
+          <span class="toolkit-tag">React</span>
+          <span class="toolkit-tag">Python</span>
+          <span class="toolkit-tag">Leaflet.js</span>
+          <span class="toolkit-tag">Git</span>
+          <span class="toolkit-tag">Figma</span>
+        </div>
+      </section>
+
+      <section class="content-section reveal" id="elsewhere">
+        <div class="section-label">Elsewhere</div>
+        <div class="elsewhere-grid">
+          <a href="https://www.instagram.com/yash_s_rajput?igsh=ajVoMXFkdWJhb3pk" target="_blank" rel="noopener" class="elsewhere-card">
+            <span class="elsewhere-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#E3C077" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E3C077"/></svg>
+            </span>
+            <span class="elsewhere-meta">
+              <span class="k">Instagram</span><br>
+              <span class="v">@yash_s_rajput</span>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/yash-singh-425776365" target="_blank" rel="noopener" class="elsewhere-card">
+            <span class="elsewhere-icon">
+              <svg viewBox="0 0 24 24" fill="#E3C077"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-4v-6.87c0-1.64-.03-3.75-2.28-3.75-2.29 0-2.64 1.79-2.64 3.63V23h-4V8z"/></svg>
+            </span>
+            <span class="elsewhere-meta">
+              <span class="k">LinkedIn</span><br>
+              <span class="v">Yash Singh</span>
+            </span>
+          </a>
+        </div>
+        <div class="seal-block">
+          <div class="seal-frame">
+            <img src="img/yash-instagram-qr.png" alt="QR code to Yash's Instagram profile @yash_s_rajput" loading="lazy">
+          </div>
+          <div class="seal-text">
+            <div class="k">Scan</div>
+            <div class="v">Point your camera here to open Instagram directly</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section reveal" id="contact">
+        <div class="section-label">Contact</div>
+        <p class="contact-lede">Have a project, a question, or just want to say hi? Pick whatever's easiest for you.</p>
+        <div class="contact-grid">
+          <a href="tel:+918128622704" class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="contact-meta">
+              <span class="k">Call</span>
+              <span class="v">+91 8128622704</span>
+            </span>
+          </a>
+          <a href="https://wa.me/918128622704" target="_blank" rel="noopener" class="contact-card is-primary">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.25-4.36c0-4.54 3.7-8.24 8.24-8.24m-4.52 4.72c-.15 0-.4.06-.61.3-.21.24-.8.78-.8 1.9 0 1.12.82 2.2.93 2.35.12.15 1.6 2.55 3.94 3.47 1.95.77 2.34.62 2.76.58.42-.04 1.36-.55 1.55-1.09.19-.53.19-.98.13-1.08-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.32-.75-1.8-.2-.47-.4-.4-.55-.41z"/></svg>
+            </span>
+            <span class="contact-meta">
+              <span class="k">WhatsApp</span>
+              <span class="v">Fastest reply</span>
+            </span>
+          </a>
+          <a href="mailto:yashjbsingh@gmail.com" class="contact-card contact-card-email">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+            </span>
+            <span class="contact-meta">
+              <span class="k">Email</span>
+              <span class="v v-email">yashjbsingh@gmail.com</span>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/yash-singh-425776365" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-4v-6.87c0-1.64-.03-3.75-2.28-3.75-2.29 0-2.64 1.79-2.64 3.63V23h-4V8z"/></svg>
+            </span>
+            <span class="contact-meta">
+              <span class="k">LinkedIn</span>
+              <span class="v">Yash Singh</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="mobile-footer">Designed &amp; built by Yashl̥ō Singh</div>
+
+  <script src="js/script.js"></script>
+  <script>
+    (function () {
+      // scroll progress rail
+      var fill = document.getElementById('scrollFill');
+      function updateRail() {
+        if (!fill) return;
+        var doc = document.documentElement;
+        var scrolled = window.scrollY || doc.scrollTop;
+        var height = doc.scrollHeight - doc.clientHeight;
+        var pct = height > 0 ? (scrolled / height) * 100 : 0;
+        fill.style.height = pct + '%';
+      }
+      document.addEventListener('scroll', updateRail, { passive: true });
+      updateRail();
+
+      // ambient gold particles
+      var field = document.getElementById('particleField');
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (field && !prefersReduced) {
+        var count = window.innerWidth < 700 ? 10 : 20;
+        for (var p = 0; p < count; p++) {
+          var d = document.createElement('div');
+          d.className = 'particle';
+          var size = (Math.random() * 2.5 + 1.5).toFixed(1);
+          d.style.setProperty('--ps', size + 'px');
+          d.style.setProperty('--pl', (Math.random() * 100).toFixed(1) + '%');
+          d.style.setProperty('--pd', (Math.random() * 14 + 14).toFixed(1) + 's');
+          d.style.setProperty('--pdelay', (Math.random() * -20).toFixed(1) + 's');
+          d.style.setProperty('--px', (Math.random() * 60 - 30).toFixed(0) + 'px');
+          field.appendChild(d);
+        }
+      }
+
+      // 3D tilt on photo and live project card
+      if (window.matchMedia('(hover: hover)').matches && !prefersReduced) {
+        var tiltEls = document.querySelectorAll('#tiltPhoto, .ledger-row.is-live');
+        tiltEls.forEach(function (el) {
+          el.addEventListener('mousemove', function (e) {
+            var rect = el.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width - 0.5;
+            var y = (e.clientY - rect.top) / rect.height - 0.5;
+            var maxTilt = el.id === 'tiltPhoto' ? 14 : 4;
+            el.style.transform = 'perspective(700px) rotateX(' + (-y * maxTilt) + 'deg) rotateY(' + (x * maxTilt) + 'deg)';
+          });
+          el.addEventListener('mouseleave', function () {
+            el.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg)';
+          });
+        });
+      }
+
+      // star rating widget — sends automatically via EmailJS, no click needed from the visitor
+      // ⚠️ REPLACE THESE 3 VALUES WITH YOUR OWN FROM emailjs.com, THEN THIS GOES LIVE:
+      var EMAILJS_PUBLIC_KEY = 'QX9ZU7tLi7dB7NoQB';
+      var EMAILJS_SERVICE_ID = 'service_d8lshzg';
+      var EMAILJS_TEMPLATE_ID = 'template_unx79mc';
+
+      if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      }
+
+      var starWrap = document.getElementById('starRating');
+      var rateResult = document.getElementById('rateResult');
+      var rateCommentBlock = document.getElementById('rateCommentBlock');
+      var rateCommentInput = document.getElementById('rateComment');
+      var rateNameInput = document.getElementById('rateName');
+      var sendRatingBtn = document.getElementById('sendRatingBtn');
+
+      if (starWrap && rateResult && sendRatingBtn) {
+        var stars = Array.prototype.slice.call(starWrap.querySelectorAll('.star'));
+        var picked = 0;
+        var alreadySent = false;
+
+        function paint(value) {
+          stars.forEach(function (s) {
+            var v = parseInt(s.getAttribute('data-value'), 10);
+            s.classList.toggle('is-filled', v <= value);
+          });
+        }
+
+        stars.forEach(function (s) {
+          var v = parseInt(s.getAttribute('data-value'), 10);
+          s.addEventListener('mouseenter', function () { if (window.matchMedia('(hover: hover)').matches && !alreadySent) paint(v); });
+          s.addEventListener('mouseleave', function () { if (window.matchMedia('(hover: hover)').matches && !alreadySent) paint(picked); });
+          s.addEventListener('click', function () {
+            if (alreadySent) return;
+            picked = v;
+            paint(picked);
+            starWrap.setAttribute('aria-label', picked + ' out of 5 stars selected');
+            if (rateCommentBlock) rateCommentBlock.hidden = false;
+            rateResult.textContent = picked + ' star' + (picked > 1 ? 's' : '') + ' selected — add a note if you want, then hit Send.';
+          });
+        });
+
+        sendRatingBtn.addEventListener('click', function () {
+          if (alreadySent) return;
+          if (!picked) {
+            rateResult.textContent = 'Pick a star first.';
+            return;
+          }
+          if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+            console.warn('EmailJS is not configured yet — set EMAILJS_PUBLIC_KEY / SERVICE_ID / TEMPLATE_ID in creator.html');
+            rateResult.textContent = 'Thanks for the ' + picked + '-star rating!';
+            alreadySent = true;
+            stars.forEach(function (st) { st.disabled = true; });
+            sendRatingBtn.disabled = true;
+            return;
+          }
+
+          sendRatingBtn.disabled = true;
+          rateResult.textContent = 'Sending your rating…';
+
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            rating: picked,
+            comment: (rateCommentInput && rateCommentInput.value.trim()) || '(no comment left)',
+            name: (rateNameInput && rateNameInput.value.trim()) || 'Anonymous',
+            page: window.location.href,
+            time: new Date().toLocaleString(),
+            to_email: 'yashjbsingh@gmail.com'
+          }).then(function () {
+            alreadySent = true;
+            stars.forEach(function (st) { st.disabled = true; });
+            if (rateCommentInput) rateCommentInput.disabled = true;
+            if (rateNameInput) rateNameInput.disabled = true;
+            rateResult.textContent = 'Thanks for the ' + picked + '-star rating! It just landed in Yash\'s inbox.';
+          }).catch(function (err) {
+            console.error('EmailJS send failed:', err);
+            sendRatingBtn.disabled = false;
+            var reason = (err && (err.text || err.message)) ? (' (' + (err.text || err.message) + ')') : '';
+            rateResult.textContent = 'Could not send' + reason + ' — check the browser console for details, or try again.';
+          });
+        });
+      }
+
+      // active nav link on scroll
+      var sections = document.querySelectorAll('main section[id]');
+      var navLinks = document.querySelectorAll('.side-nav a');
+      if ('IntersectionObserver' in window && sections.length) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id;
+              navLinks.forEach(function (a) {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+              });
+            }
+          });
+        }, { rootMargin: '-35% 0px -50% 0px' });
+        sections.forEach(function (s) { obs.observe(s); });
+      }
+    })();
+  </script>
+</body>
+
+</html>
