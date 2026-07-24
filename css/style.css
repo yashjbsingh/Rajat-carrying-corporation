@@ -341,6 +341,9 @@ a:focus-visible, button:focus-visible{
 .route-truck rect{fill:#f1efea;stroke:#0d1730;stroke-width:1;}
 .route-truck path{fill:var(--red);stroke:#0d1730;stroke-width:1;}
 .route-truck circle{fill:#17181c;stroke:var(--amber);stroke-width:.8;}
+.route-truck-mobile rect{fill:#f1efea;stroke:#0d1730;stroke-width:1;}
+.route-truck-mobile path{fill:var(--red);stroke:#0d1730;stroke-width:1;}
+.route-truck-mobile circle{fill:#17181c;stroke:var(--amber);stroke-width:.8;}
 
 .hero-strip{
   background:var(--asphalt);
