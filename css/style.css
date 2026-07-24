@@ -1399,10 +1399,6 @@ footer li a:hover{color:var(--amber);}
   .coverage-route{stroke-dasharray:6 5;animation:coverage-flow 20s linear infinite;}
   .map-cities .base-pin{animation:none;}
   .map-cities text{font-size:5px;}
-  .india-route-map{contain:layout style;}
-  .route-truck-mobile rect{fill:#f1efea;stroke:#0d1730;stroke-width:1;}
-  .route-truck-mobile path{fill:var(--red);stroke:#0d1730;stroke-width:1;}
-  .route-truck-mobile circle{fill:#17181c;stroke:var(--amber);stroke-width:.8;}
   .hero-panel-topline .live-dot{box-shadow:0 0 0 3px rgba(68,211,127,.13);}
   .hero h1 span{animation:none;-webkit-text-fill-color:var(--amber);background:none;}
   .leader-card{transform-style:flat;will-change:auto;}
