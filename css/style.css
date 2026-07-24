@@ -333,7 +333,10 @@ a:focus-visible, button:focus-visible{
   border:1px solid rgba(255,255,255,.1);
   border-radius:9px;
   box-shadow:inset 0 0 35px rgba(0,0,0,.18);
+  opacity:0;transform:translateY(30px) scale(.97);
+  transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);
 }
+.india-route-map.map-revealed{opacity:1;transform:translateY(0) scale(1);}
 .india-route-map svg{width:100%;height:auto;display:block;}
 .india-route-map ~ div{display:none;}
 .map-loading,.map-error{font-family:var(--mono);font-size:12px;color:#9aa2b2;letter-spacing:.06em;}
@@ -348,6 +351,15 @@ a:focus-visible, button:focus-visible{
 .route-truck-mobile rect{fill:#f1efea;stroke:#0d1730;stroke-width:1;}
 .route-truck-mobile path{fill:var(--red);stroke:#0d1730;stroke-width:1;}
 .route-truck-mobile circle{fill:#17181c;stroke:var(--amber);stroke-width:.8;}
+
+.india-route-map .india-land{opacity:0;transition:opacity .6s ease .1s;}
+.india-route-map .coverage-route{opacity:0;stroke-dashoffset:0;transition:opacity .8s ease .3s;}
+.india-route-map .map-cities{opacity:0;transition:opacity .6s ease .5s;}
+.india-route-map .route-truck,.india-route-map .route-truck-mobile{opacity:0;transition:opacity .5s ease .7s;}
+.india-route-map.map-revealed .india-land{opacity:1;}
+.india-route-map.map-revealed .coverage-route{opacity:.85;}
+.india-route-map.map-revealed .map-cities{opacity:1;}
+.india-route-map.map-revealed .route-truck,.india-route-map.map-revealed .route-truck-mobile{opacity:1;}
 
 .hero-strip{
   background:var(--asphalt);
@@ -1088,7 +1100,7 @@ footer li a:hover{color:var(--amber);}
   .site-header.is-scrolled .wrap{height:80px;}
   .site-header.is-scrolled .brand-logo{height:64px;}
 }
-.coverage-route{stroke-dasharray:7 7;animation:coverage-flow 14s linear infinite;}.map-cities .base-pin{animation:hub-pulse 2.2s ease-out infinite;transform-origin:center;}
+.coverage-route{stroke-dasharray:7 7;animation:coverage-flow 14s ease-in-out infinite;}.map-cities .base-pin{animation:hub-pulse 2.2s ease-out infinite;transform-origin:center;}
 .trust-card .fleet-mark span,.trust-card .route-pulse,.trust-card .delivery-seal{transition:transform .38s cubic-bezier(.2,.7,.2,1),opacity .3s ease,box-shadow .3s ease;}
 .trust-card:hover .fleet-mark span:nth-child(1){transform:translateY(-8px);}.trust-card:hover .fleet-mark span:nth-child(2){transform:translateY(-14px);}.trust-card:hover .fleet-mark span:nth-child(3){transform:translateY(-20px);}.trust-card:hover .route-pulse{transform:rotate(-12deg) translateX(12px);}.trust-card:hover .delivery-seal{transform:rotate(10deg) scale(1.07);box-shadow:inset 0 0 0 7px rgba(215,38,61,.1),0 10px 22px rgba(215,38,61,.12);}
 .trust-card:hover .icon-badge{transform:translateY(-3px) rotate(-4deg);}.trust-card .icon-badge{transition:transform .3s cubic-bezier(.2,.7,.2,1),background .3s ease;}

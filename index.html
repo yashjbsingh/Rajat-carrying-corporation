@@ -485,9 +485,11 @@
         const routeLen = routeEl.getTotalLength();
         const duration = 18000;
         const positions = [];
-        const frames = 300;
+        const frames = 360;
         for (let i = 0; i <= frames; i++) {
-          const d = (i / frames) * routeLen;
+          const t = i / frames;
+          const ease = t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+          const d = ease * routeLen;
           const pt = routeEl.getPointAtLength(d);
           const nxt = routeEl.getPointAtLength((d + 2) % routeLen);
           positions.push({ x: pt.x, y: pt.y, a: Math.atan2(nxt.y - pt.y, nxt.x - pt.x) * 180 / Math.PI });
@@ -518,6 +520,12 @@
 
       if (isMobile) { fetch(dataUrl).then(r => { if (!r.ok) throw 0; return r.json(); }).then(g => buildMap(g)).catch(() => buildMap(null)); }
       else { fetch(dataUrl).then(r => { if (!r.ok) throw 0; return r.json(); }).then(g => buildMap(g)).catch(() => { map.innerHTML = '<span class="map-error">Nationwide map is unavailable right now.</span>'; }); }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { map.classList.add('map-revealed'); } });
+        }, { threshold: 0.15 }).observe(map);
+      } else { map.classList.add('map-revealed'); }
     })();
   </script>
 </body>
