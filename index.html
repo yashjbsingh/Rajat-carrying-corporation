@@ -450,7 +450,7 @@
         const points = cities.map(([, lon, lat]) => project([lon, lat]));
         const closeIdx = [24,23,22,21,20,19,18];
         const closePath = closeIdx.map(i => 'L'+points[i][0].toFixed(1)+','+points[i][1].toFixed(1)).join(' ');
-        const route = points.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`).join(' ') + ' ' + closePath + ` L${points[0][0].toFixed(1)},${points[0][1].toFixed(1)}`;
+        const route = points.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`).join(' ') + ' ' + closePath + ` L${points[2][0].toFixed(1)},${points[2][1].toFixed(1)}`;
         svg.appendChild(el('path', { id: 'coverage-route', d: route, class: 'coverage-route' }));
         const labels = el('g', { class: 'map-cities' });
         cities.forEach(([name, lon, lat]) => {
