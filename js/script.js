@@ -45,37 +45,51 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Contact form: send enquiry straight to WhatsApp
+  // Contact form: send enquiry via email API
   var form = document.getElementById('enquiry-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var submitBtn = form.querySelector("button");
-submitBtn.disabled = true;
+      submitBtn.disabled = true;
       var name = document.getElementById('f-name').value.trim();
       var phone = document.getElementById('f-phone').value.trim();
+      var email = document.getElementById('f-email').value.trim();
       var pickup = document.getElementById('f-pickup').value.trim();
       var dest = document.getElementById('f-dest').value.trim();
-      var route = pickup && dest ? pickup + ' to ' + dest : pickup || dest || '';
       var message = document.getElementById('f-message').value.trim();
 
-      var text = 'Enquiry from website:%0A' +
-        'Name: ' + encodeURIComponent(name) + '%0A' +
-        'Phone: ' + encodeURIComponent(phone) + '%0A' +
-        'Route: ' + encodeURIComponent(route || 'Not specified') + '%0A' +
-        'Details: ' + encodeURIComponent(message || 'Not specified');
-
-      window.open('https://wa.me/918141167986?text=' + text, '_blank');
-
       var status = document.getElementById('form-status');
-      if (status) {
-        status.textContent = 'Opening WhatsApp to send your enquiry to ' + (name || 'us') + '\'s contact. If it didn\'t open, call us directly instead.';
-        status.style.display = 'block';
-      }
-      form.reset();
-      setTimeout(() => {
-  submitBtn.disabled = false;
-}, 3000);
+
+      fetch('/api/send-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: phone, email: email, pickup: pickup, destination: dest, details: message })
+      })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          if (!res.ok) throw new Error(data.error || 'Server error');
+          return data;
+        });
+      })
+      .then(function () {
+        if (status) {
+          status.textContent = 'Thank you, ' + (name || 'you') + '! Your enquiry has been sent. We\'ll get back to you shortly.';
+          status.style.color = '#1a7a3a';
+          status.style.display = 'block';
+        }
+        form.reset();
+      })
+      .catch(function () {
+        if (status) {
+          status.textContent = 'Something went wrong. Please try again or call us directly at +91 81411 67986.';
+          status.style.color = '#D7263D';
+          status.style.display = 'block';
+        }
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+      });
     });
   }
 
