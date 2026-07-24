@@ -1396,7 +1396,7 @@ footer li a:hover{color:var(--amber);}
   .hero-orbit{display:none;}
   .hero-route-lines{opacity:.35;}
   .hero-truck-bg{opacity:.1;}
-  .coverage-route{stroke-dasharray:6 5;animation:coverage-flow 20s linear infinite;}
+  .coverage-route{stroke-dasharray:6 5;animation:none;}
   .map-cities .base-pin{animation:none;}
   .map-cities text{font-size:5px;}
   .hero-panel-topline .live-dot{box-shadow:0 0 0 3px rgba(68,211,127,.13);}
